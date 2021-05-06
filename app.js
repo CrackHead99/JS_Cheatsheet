@@ -1,18 +1,41 @@
-const closedFace = document.querySelector('.closed')
-const openFace = document.querySelector('.open')
+console.log('The squad');
 
-// Add event listener
-closedFace.addEventListener('click', () => {
-    if(openFace.classList.contains('open')) {
-        openFace.classList.add('active');
-        closedFace.classList.remove('active');
+// Array of objects and mapping //
+let data = [
+    {
+        name: 'Destiny',
+        age: '28'
+    }, 
+    {
+        name: 'Sarah',
+        age: '30'
+    }, 
+    {
+        name: 'John',
+        age: '32'
+    }, 
+    {
+        name: 'Tim',
+        age: '27'
+    }, 
+    {
+        name: 'Sam',
+        age: '22'
+    }, 
+    {
+        name: 'Joey',
+        age: '34'
     }
-});
+];
 
-openFace.addEventListener('click', () => {
-    if(closedFace.classList.contains('closed')) {
-        closedFace.classList.add('active');
-        openFace.classList.remove('active');
-    }
-}) 
+// Event bubbling //
+const info = document.querySelector('#info')
 
+let details = data.map(function(item) {
+    return (
+        '<div>' + item.name + ' ' + 'is ' + item.age + ' years old' 
+        + '</div>'
+    )
+})
+
+info.innerHTML = details.join('\n');
