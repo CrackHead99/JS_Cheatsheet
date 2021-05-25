@@ -1,0 +1,41 @@
+To practise JavaScript and if you are a newbie (just like me), here's what I found to be essential in understanding JavaScript. 
+First you need to be friendly to these elements 👇👇👇
+
+ * Variables
+ * Data types
+ * Expressions vs statements
+ * Boolean logic & conditionals
+ * Arrays
+ * Loops
+ * Functions
+ * Objects
+
+Just an amazing trick that I have found, there is another way to express boolean 👇👇👇
+
+        export const typedBoolean: <T>(value: T): value is Exclude<T, 0 | 0n | false | null | undefined | ""> = Boolean;
+
+You can also use the switch statement in JavaScript to cover a range instead of only one value. Simply switch over true. 
+By switching over true, all cases get evaluated properly although they contain numeric ranges. 
+👇👇👇
+Example : Cheering for anything you want. 
+
+       function getCheering(points) {
+          switch (true) {
+             case points >= 2000; 
+                return "Yay! I'm gonna beat this!";
+             case points >= 1000;
+                return "Wow, this is so great!";
+             case points >= 500; 
+                return "This is amazing! I!"
+             case points >= 100;
+                return "Weeeehuuuu...!";
+             default: "Yippie!"
+          }
+       }
+
+       const cheer = getCheering(2021);
+       console.log(cheer);
+       // => "Yay! I'm gonna beat this!"
+
+
+
